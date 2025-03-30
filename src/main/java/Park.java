@@ -6,20 +6,18 @@ public class Park {
     private String name;
     private List<Attraction> attractions;
 
-    // Конструктор парка
+
     public Park(String name) {
         this.name = name;
         this.attractions = new ArrayList<>();
     }
 
-    // Внутренний класс для хранения информации об аттракционах
     public class Attraction {
         private String name;
         private LocalTime openingTime;
         private LocalTime closingTime;
         private double price;
 
-        // Конструктор аттракциона
         public Attraction(String name, LocalTime openingTime, LocalTime closingTime, double price) {
             this.name = name;
             this.openingTime = openingTime;
@@ -27,7 +25,6 @@ public class Park {
             this.price = price;
         }
 
-        // Геттеры и сеттеры
         public String getName() {
             return name;
         }
@@ -67,7 +64,6 @@ public class Park {
         }
     }
 
-    // Методы для работы с аттракционами парка
     public void addAttraction(String name, LocalTime openingTime, LocalTime closingTime, double price) {
         Attraction newAttraction = new Attraction(name, openingTime, closingTime, price);
         attractions.add(newAttraction);
@@ -98,5 +94,19 @@ public class Park {
             sb.append(attraction).append("\n");
         }
         return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        Park dreamisland = new Park("Остров мечты");
+
+        dreamisland.addAttraction("Американские горки",
+                LocalTime.of(10, 0), LocalTime.of(20, 0), 200.00);
+        dreamisland.addAttraction("Молот судьбы",
+                LocalTime.of(9, 30), LocalTime.of(19, 30), 500.00);
+        dreamisland.addAttraction("Вихрь",
+                LocalTime.of(11, 0), LocalTime.of(18, 0), 350.50);
+
+
+        System.out.println(dreamisland);
     }
 }
