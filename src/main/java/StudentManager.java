@@ -28,7 +28,6 @@ public class StudentManager {
     public static void main(String[] args) {
         Set<Student> students = new HashSet<>();
 
-        // Добавляем студентов с использованием Arrays.asList()
         students.add(new Student("Иван", "Группа 1", 1, Arrays.asList(4, 5, 3)));
         students.add(new Student("Мария", "Группа 2", 2, Arrays.asList(2, 2, 3)));
         students.add(new Student("Петр", "Группа 1", 1, Arrays.asList(5, 5, 5)));
